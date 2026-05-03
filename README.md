@@ -30,14 +30,13 @@ Ejemplo con las palabras "bat" y "bad":
 
 
   ```
-(raíz/origen)
-  |
-  b
-  |
-  a
- / \
-t*  d*
+raiz
+└── b
+    └── a
+        ├── t (fin de palabra)
+        └── d (fin de palabra)
 ```
+*La marca de fin de palabra indica que ahí termina un token válido y se guarda el ID de la película correspondiente.*
 
 
 ---
