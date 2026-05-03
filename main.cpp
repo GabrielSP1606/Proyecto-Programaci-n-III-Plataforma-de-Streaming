@@ -27,4 +27,13 @@ int main() {
 
         cout << "\n-----------------\n";
     }
+
+    vector<Pelicula> pelis = cargarCSV("../wiki_movie_plots_deduped.csv");
+    
+    Trie miTrie;
+    cout << "Construyendo estructura de busqueda" << endl;
+    miTrie.construirTrie(pelis);
+    
+    return 0;
+
 }
