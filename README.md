@@ -29,6 +29,7 @@ Cada nodo del Trie tiene:
 Ejemplo con las palabras "bat" y "bad":
 
 
+  ```
 (raíz/origen)
   |
   b
@@ -36,6 +37,7 @@ Ejemplo con las palabras "bat" y "bad":
   a
  / \
 t*  d*
+```
 
 
 ---
