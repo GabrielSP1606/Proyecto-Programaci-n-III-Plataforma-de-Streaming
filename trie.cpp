@@ -47,6 +47,6 @@ void Trie::construirTrie(const vector<Pelicula>& peliculas) {
             insertar(pal, i); 
         }
         
-        if (i % 1000 == 0) cout << "Indexadas " << i << " peliculas..." << endl;
+        if (i % 1000 == 0) cout << "Indexadas " << i << " peliculas" << endl;
     }
 }
