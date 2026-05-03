@@ -29,7 +29,13 @@ Cada nodo del Trie tiene:
 Ejemplo con las palabras "bat" y "bad":
 
 
-*Pendiente*
+(raíz/origen)
+  |
+  b
+  |
+  a
+ / \
+t*  d*
 
 
 ---
