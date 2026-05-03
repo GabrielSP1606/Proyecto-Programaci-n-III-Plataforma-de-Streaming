@@ -3,4 +3,5 @@ project(Proyecto_Progra_3)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Proyecto_Progra_3 main.cpp)
+add_executable(Proyecto_Progra_3
+        lista_ver_mas_tarde.h)
