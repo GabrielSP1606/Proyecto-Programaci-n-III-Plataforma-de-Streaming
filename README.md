@@ -1,8 +1,8 @@
 # Programación III: Plataforma de Streaming
 
 **Integrantes:**
--  Ariel Mathias Fernando Choque Marcelo
-- Benito Corimanya Juarez Marco Antonio
+- Ariel Mathias Fernando Choque Marcelo
+- Marco Antonio Benito Corimanya Juarez 
 - Ernesto Yen Mendoza Aguilar
 - Adrian Gabriel Rojas Tejada
 - Gabriel Omar Saavedra Peralta
