@@ -15,4 +15,4 @@ struct Pelicula {
     string sinopsis;
 };
 
-#endif PELCULA_H
+#endif
