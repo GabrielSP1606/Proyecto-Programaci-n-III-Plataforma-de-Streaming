@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.2)
+cmake_minimum_required(VERSION 4.0)
 project(Proyecto_Progra_3)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -11,4 +11,6 @@ add_executable(Proyecto_Progra_3
         preprocesador.h
         preprocesador.cpp
         lista_ver_mas_tarde.h
-        lista_ver_mas_tarde.cpp)
+        lista_ver_mas_tarde.cpp
+        trie.h
+        trie.cpp)

@@ -1,6 +1,62 @@
 #include "trie.h"
 #include "preprocesador.h"
 #include <iostream>
+#include <algorithm>
+using namespace std;
+
+vector <Resultado> Trie::buscar(string consulta) {
+    string limpio = normalizar(consulta);
+    NodoTrie* actual = raiz;
+    for (char c : limpio) {
+        int indice = obtenerIndice(c);
+        if (indice == -1) continue;
+
+        if (actual->hijos[indice]==nullptr) {
+            return {};
+        }
+        actual = actual->hijos[indice];
+    }
+    unordered_map<int, int> consolidado;
+    recolectarResultados(actual, consolidado);
+    priority_queue<Resultado> pq;
+    for (auto const& [id, frec] : consolidado) {
+        pq.push({id, frec});
+    }
+    vector<Resultado> listaOrdenada;
+    while (!pq.empty()) {
+        listaOrdenada.push_back(pq.top());
+        pq.pop();
+    }
+
+    return listaOrdenada;
+}
+
+void Trie::recolectarResultados(NodoTrie *nodo, unordered_map<int, int> &resultadosAcumulados) {
+    if (nodo == nullptr) return;
+    for (auto const& [id, frec] : nodo->contadorPeliculas) {
+        resultadosAcumulados[id] += frec;
+    }
+
+    for (int i = 0; i < 36; i++) {
+        if (nodo->hijos[i] != nullptr) {
+            recolectarResultados(nodo->hijos[i], resultadosAcumulados);
+        }
+    }
+}
+
+vector<Resultado> Trie::obtenerPagina(const vector<Resultado>& resultados, int pagina, int tamanoPagina) {
+    vector<Resultado> subLista;
+
+    int inicio = (pagina - 1) * tamanoPagina;
+
+    if (inicio >= resultados.size() || pagina <= 0) return {};
+
+    for (int i = inicio; i < inicio + tamanoPagina && i < resultados.size(); i++) {
+        subLista.push_back(resultados[i]);
+    }
+
+    return subLista;
+}
 
 NodoTrie::NodoTrie() {
     for (int i = 0; i < 36; i++) hijos[i] = nullptr;
