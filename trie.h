@@ -49,4 +49,6 @@ public:
     vector<Resultado> buscar(string consulta);
     vector<Resultado> obtenerPagina(const vector<Resultado>& todosLosResultados, int pagina, int tamanoPagina = 5);
 };
-#endif
+
+// [TESTEO: No finalizado aún]
+#endif// [TESTEO: No finalizado aun]
