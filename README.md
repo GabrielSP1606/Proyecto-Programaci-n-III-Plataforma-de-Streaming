@@ -43,7 +43,59 @@ raiz
 
 ## Algoritmo de inserción
 
-*Pendiente de persona 2*
+1. *Proceso de Inserción*
+
+Cada palabra que proviene del preprocesamiento se ingresa al Trie carácter por carácter.
+Primero, se obtiene el índice del carácter actual, donde las letras a-z ocupan los índices 0-25 y los números 0-9 ocupan los índices 26-35.
+Si el nodo correspondiente a ese índice no existe, se crea uno nuevo. (cuando una palabra empieza por una letra registrada por primera vez)
+Al llegar al último carácter de la palabra, se marca ese nodo como fin de palabra y se incrementa el contador de la película correspondiente.
+
+2. *Construcción del Trie*
+
+Para construir el Trie completo, se itera sobre todas las películas del dataset.
+Por cada película, se concatena su título, sinopsis, director, género y cast en un solo texto.
+Ese texto pasa por la función *normalizar()* y *tokenizar()* para obtener las palabras limpias.
+Finalmente, cada palabra se inserta en el Trie asociada al índice de su película.
+
+3. *Complejidad*
+
+- Inserción de una palabra: *O(L)*, donde *L* es la longitud de la palabra.
+
+4. *Pseudocódigo*
+
+
+
+Funcion insertar(palabra, idPelicula): Algoritmo que ingresa una palabra al Trie y la asocia a una película.
+```
+ALGORITMO insertar(palabra, idPelicula)
+nodo actual = raiz
+PARA CADA caracter EN palabra:
+    indice = obtenerIndice(caracter)
+    SI indice ES invalido (-1) ENTONCES:
+        CONTINUAR al siguiente caracter
+    SI nodo actual.hijos[indice] ES nulo ENTONCES:
+        crear nuevo NodoTrie en nodo actual.hijos[indice]
+    nodo actual = nodo actual.hijos[indice]
+
+nodo actual.esFin = verdadero
+nodo actual.contadorPeliculas[idPelicula]++
+FIN del ALGORITMO
+```
+
+
+Funcion construirTrie(peliculas): Función que itera todas las películas y las ingresa al Trie.
+```
+ALGORITMO construirTrie(peliculas)
+PARA CADA pelicula EN peliculas CON indice i:
+contenido = pelicula.titulo + pelicula.sinopsis +
+pelicula.director + pelicula.genero + pelicula.cast
+contenido limpio = normalizar(contenido)
+palabras = tokenizar(contenido limpio)
+    PARA CADA palabra EN palabras:
+        insertar(palabra, i)
+
+FIN del ALGORITMO
+```
 
 ---
 
