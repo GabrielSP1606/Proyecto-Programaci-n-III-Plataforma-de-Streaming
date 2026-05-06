@@ -173,5 +173,3 @@ Funcion recolectarResultados(nodo, mapa): Funcion recursiva que permite encontra
             recolectarResultados(nodo.hijos[i], mapa acumulador)
 FIN del ALGORITMO        
 ```
-
-
