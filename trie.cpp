@@ -106,3 +106,4 @@ void Trie::construirTrie(const vector<Pelicula>& peliculas) {
         if (i % 1000 == 0) cout << "Indexadas " << i << " peliculas" << endl;
     }
 }
+// [TESTEO: No finalizado aún]// [TESTEO: No finalizado aun]
