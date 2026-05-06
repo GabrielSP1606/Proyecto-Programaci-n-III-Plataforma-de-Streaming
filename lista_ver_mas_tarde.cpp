@@ -60,3 +60,5 @@ void mostrarVerMasTarde(const vector<Pelicula>& peliculas) {
         }
     }
 }
+
+// [TESTEO: No finalizado aún]// [TESTEO: No finalizado aun]
