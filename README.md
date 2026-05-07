@@ -173,3 +173,25 @@ Funcion recolectarResultados(nodo, mapa): Funcion recursiva que permite encontra
             recolectarResultados(nodo.hijos[i], mapa acumulador)
 FIN del ALGORITMO        
 ```
+
+
+---
+
+## Notas sobre el código de prueba
+
+Durante el desarrollo de esta primera entrega, como equipo, decidimos implementar en C++ algunas funciones que originalmente solo requerían pseudocódigo. Esto fue necesario por dos razones:
+
+**Para validar los pseudo-códigos de P2 y P3:** Antes de documentar los algoritmos de inserción y búsqueda, implementamos el código real para verificar que la lógica funcionara correctamente con datos reales del dataset. Una vez validado, extrajimos esa lógica para escribir los pseudo-códigos del README. Estas funciones están marcadas con `[TESTEO P2]` y `[TESTEO P3]` en el código.
+
+**Para que P4 pudiera construir un prototipo funcional:** En lugar de hardcodear películas inventadas, P4 conectó la interfaz directamente al CSV real para poder validar que el pre-procesamiento y la inserción producían resultados correctos. Esto está marcado con `[TESTEO P4]` en el código.
+
+Todo el código marcado como testeo es un prototipo. Para la entrega 2 será corregido o mejorado.
+
+---
+
+## Limitaciones actuales y trabajo pendiente para entrega 2
+
+- La búsqueda por frase (ejemplo: "barco fantasma") aún no está implementada
+- El algoritmo de similitud por Likes está pendiente
+- La búsqueda por tag específico (solo director, solo género) está pendiente
+- La interfaz actual es un prototipo de prueba, será reemplazada por la versión final
