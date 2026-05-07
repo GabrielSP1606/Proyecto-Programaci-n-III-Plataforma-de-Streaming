@@ -12,6 +12,7 @@
 using namespace std;
 
 //Estructura para el manejo de ranking de los resultados
+// [TESTEO P3: No finalizado aun]
 struct Resultado {
     int idPelicula;
     int relevancia;
@@ -22,6 +23,7 @@ struct Resultado {
     }
 };
 
+// [TESTEO P2: No finalizado aun]
 struct NodoTrie {
     NodoTrie* hijos[36]; // 26 letras + 10 números
     bool esFin;
@@ -31,6 +33,7 @@ struct NodoTrie {
     NodoTrie();
 };
 
+// [TESTEO P2: No finalizado aun]
 class Trie {
 private:
     NodoTrie* raiz;
@@ -49,6 +52,4 @@ public:
     vector<Resultado> buscar(string consulta);
     vector<Resultado> obtenerPagina(const vector<Resultado>& todosLosResultados, int pagina, int tamanoPagina = 5);
 };
-
-// [TESTEO: No finalizado aún]
-#endif// [TESTEO: No finalizado aun]
+#endif//

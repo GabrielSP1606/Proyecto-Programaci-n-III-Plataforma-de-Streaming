@@ -4,6 +4,7 @@
 #include <algorithm>
 using namespace std;
 
+// [TESTEO P3: No finalizado aun]
 vector <Resultado> Trie::buscar(string consulta) {
     string limpio = normalizar(consulta);
     NodoTrie* actual = raiz;
@@ -31,6 +32,7 @@ vector <Resultado> Trie::buscar(string consulta) {
     return listaOrdenada;
 }
 
+// [TESTEO P3: No finalizado aun]
 void Trie::recolectarResultados(NodoTrie *nodo, unordered_map<int, int> &resultadosAcumulados) {
     if (nodo == nullptr) return;
     for (auto const& [id, frec] : nodo->contadorPeliculas) {
@@ -44,6 +46,7 @@ void Trie::recolectarResultados(NodoTrie *nodo, unordered_map<int, int> &resulta
     }
 }
 
+// [TESTEO P3: No finalizado aun]
 vector<Resultado> Trie::obtenerPagina(const vector<Resultado>& resultados, int pagina, int tamanoPagina) {
     vector<Resultado> subLista;
 
@@ -58,21 +61,24 @@ vector<Resultado> Trie::obtenerPagina(const vector<Resultado>& resultados, int p
     return subLista;
 }
 
+// [TESTEO P2: No finalizado aun]
 NodoTrie::NodoTrie() {
     for (int i = 0; i < 36; i++) hijos[i] = nullptr;
     esFin = false;
 }
 
+// [TESTEO P2: No finalizado aun]
 Trie::Trie() {
     raiz = new NodoTrie();
 }
-
+// [TESTEO P2: No finalizado aun]
 int Trie::obtenerIndice(char c) {
     if (c >= 'a' and c <= 'z') return c - 'a';
     if (c >= '0' and c <= '9') return c - '0' + 26;
     return -1; // ignoamos los caracteres que no son letras ni numeros
 }
 
+// [TESTEO P2: No finalizado aun]
 void Trie::insertar(const string& palabra, int idPelicula) {
     NodoTrie* actual = raiz;
     for (char c : palabra) {
@@ -88,6 +94,7 @@ void Trie::insertar(const string& palabra, int idPelicula) {
     actual->contadorPeliculas[idPelicula]++;
 }
 
+// [TESTEO P2: No finalizado aun]
 void Trie::construirTrie(const vector<Pelicula>& peliculas) {
     for (int i = 0; i < peliculas.size(); i++) {
         string contenido = peliculas[i].titulo + " " + 
@@ -106,4 +113,3 @@ void Trie::construirTrie(const vector<Pelicula>& peliculas) {
         if (i % 1000 == 0) cout << "Indexadas " << i << " peliculas" << endl;
     }
 }
-// [TESTEO: No finalizado aún]// [TESTEO: No finalizado aun]

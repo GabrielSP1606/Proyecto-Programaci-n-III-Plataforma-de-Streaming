@@ -49,7 +49,6 @@ int main() {
                  << " | Relevancia: " << res.relevancia << endl;
         }
     }
-    // [TESTEO: No finalizado aún]// [TESTEO: No finalizado aun]
     */
 
     cargarListas();
@@ -68,6 +67,7 @@ int main() {
 
         cin >> opcion;
 
+        // [TESTEO P4: No finalizado aun]
         if (opcion == 1) {
             cin.ignore();
             string consulta;
@@ -111,6 +111,7 @@ int main() {
                     cout << "Seleccione: ";
                     cin >> accion;
                     accion = tolower(accion);
+                    // [TESTEO P4: No finalizado aun]
                     if (accion >= '1' && accion <= '5') {
                         int indice = accion - '1';
                         if (indice < pagina.size()) {
@@ -138,8 +139,8 @@ int main() {
                                 cout << "[B] Volver\n";
                                 cout << "Seleccione: ";
                                 cin >> detalleOpcion;
-                                detalleOpcion =
-                                        tolower(detalleOpcion);
+                                detalleOpcion = tolower(detalleOpcion);
+                                // [TESTEO P4: No finalizado aun]
                                 if (detalleOpcion == 'l') {
                                     agregarLike(id);
                                     cout << "\nPelicula agregada a Likes.\n";
@@ -151,14 +152,13 @@ int main() {
                             } while (detalleOpcion != 'b');
                         }
                     }
+                    // [TESTEO P4: No finalizado aun]
                     else if (accion == 'n') {
-
                         vector<Resultado> siguiente =
                                 miTrie.obtenerPagina(resultados,
                                                      paginaActual + 1,
                                                      5);
                         if (!siguiente.empty()) {
-
                             paginaActual++;
                         } else {
                             cout << "\nNo hay mas resultados.\n";
@@ -185,7 +185,6 @@ int main() {
         }
         else {
             cout << "\nOpcion invalida.\n";
-
             cin.clear();
             cin.ignore(1000, '\n');
         }
