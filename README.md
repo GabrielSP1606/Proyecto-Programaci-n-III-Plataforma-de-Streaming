@@ -105,7 +105,7 @@ FIN del ALGORITMO
 
 La frase o palabra ingresada por el usuario se procesa por la function *normalizar()* para eliminar tildes, carecteres especiales y convertir todo a minusculas. 
 También, se recorre el arbol nodo por nodo siguiendo los caracteres de la consulta, cosa que si se interrumpe el camino significaria que no existe coincidencias.
-Por último, una vez alcanzado el último nodo de la consulta, se realiza un recorrido profundo sobre todo el subarbol. Esto permite encontrar peliculas donde el termino buscando es solo el inicio de la palabra.
+Por último, una vez alcanzado el último nodo de la consulta, se realiza un recorrido profundo sobre todo el subarbol. Esto permite encontrar peliculas donde el termino buscado es solo el inicio de la palabra.
 
 Ejemplo:
 
@@ -181,9 +181,9 @@ FIN del ALGORITMO
 
 Durante el desarrollo de esta primera entrega, como equipo, decidimos implementar en C++ algunas funciones que originalmente solo requerían pseudocódigo. Esto fue necesario por dos razones:
 
-**Para validar los pseudo-códigos de P2 y P3:** Antes de documentar los algoritmos de inserción y búsqueda, implementamos el código real para verificar que la lógica funcionara correctamente con datos reales del dataset. Una vez validado, extrajimos esa lógica para escribir los pseudo-códigos del README. Estas funciones están marcadas con `[TESTEO P2]` y `[TESTEO P3]` en el código.
+**Para validar los pseudocódigos de P2 y P3:** Antes de documentar los algoritmos de inserción y búsqueda, implementamos el código real para verificar que la lógica funcionara correctamente con datos reales del dataset. Una vez validado, extrajimos esa lógica para escribir los pseudocódigos del README. Estas funciones están marcadas con `[TESTEO P2]` y `[TESTEO P3]` en el código.
 
-**Para que P4 pudiera construir un prototipo funcional:** En lugar de hardcodear películas inventadas, P4 conectó la interfaz directamente al CSV real para poder validar que el pre-procesamiento y la inserción producían resultados correctos. Esto está marcado con `[TESTEO P4]` en el código.
+**Para que P4 pudiera construir un prototipo funcional:** En lugar de hardcodear películas inventadas, P4 conectó la interfaz directamente al CSV real para poder validar que el preprocesamiento y la inserción producían resultados correctos. Esto está marcado con `[TESTEO P4]` en el código.
 
 Todo el código marcado como testeo es un prototipo. Para la entrega 2 será corregido o mejorado.
 
